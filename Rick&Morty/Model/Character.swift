@@ -19,7 +19,7 @@ struct `Character`: Decodable, URLable {
     let location: LocationLink
     let episodes: [String]
     let creationDate: String
-    private (set) let urlString: String
+    let urlString: String
     private let imageUrlString: String
 
     var imageUrl: URL? {

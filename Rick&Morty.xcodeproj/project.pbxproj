@@ -18,6 +18,13 @@
 		8FDE2BC920E4E2F5005E98BF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BC820E4E2F5005E98BF /* Location.swift */; };
 		8FDE2BCE20E4E53D005E98BF /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BCD20E4E53D005E98BF /* Episode.swift */; };
 		8FDE2BD120E4E729005E98BF /* URLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BD020E4E729005E98BF /* URLable.swift */; };
+		8FDE2BD520E4EC0B005E98BF /* CharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BD420E4EC0B005E98BF /* CharactersController.swift */; };
+		8FDE2BD720E4ED5A005E98BF /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BD620E4ED5A005E98BF /* ApiRouter.swift */; };
+		8FDE2BDC20E4F102005E98BF /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BDB20E4F102005E98BF /* CharactersViewModel.swift */; };
+		8FDE2BDE20E5025E005E98BF /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BDD20E5025E005E98BF /* BaseResponse.swift */; };
+		8FDE2BE020E5046C005E98BF /* DataResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BDF20E5046C005E98BF /* DataResponseError.swift */; };
+		8FDE2BE220E506B1005E98BF /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BE120E506B1005E98BF /* CharacterTableViewCell.swift */; };
+		8FDE2BE420E50718005E98BF /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BE320E50718005E98BF /* StoryboardIdentifiable.swift */; };
 		F2E962C2ED3C19B407B080C3 /* Pods_Rick_Morty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148812098D226CC594301C10 /* Pods_Rick_Morty.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +44,13 @@
 		8FDE2BC820E4E2F5005E98BF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8FDE2BCD20E4E53D005E98BF /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		8FDE2BD020E4E729005E98BF /* URLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLable.swift; sourceTree = "<group>"; };
+		8FDE2BD420E4EC0B005E98BF /* CharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersController.swift; sourceTree = "<group>"; };
+		8FDE2BD620E4ED5A005E98BF /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		8FDE2BDB20E4F102005E98BF /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		8FDE2BDD20E5025E005E98BF /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		8FDE2BDF20E5046C005E98BF /* DataResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseError.swift; sourceTree = "<group>"; };
+		8FDE2BE120E506B1005E98BF /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		8FDE2BE320E50718005E98BF /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		B4FBDEE086BED61772B42016 /* Pods-Rick&Morty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick&Morty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rick&Morty/Pods-Rick&Morty.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,10 +104,11 @@
 		8F2799CA20E3FB950099715A /* Rick&Morty */ = {
 			isa = PBXGroup;
 			children = (
-				8FDE2BBC20E4DE18005E98BF /* Networking */,
 				8F2799E020E3FC250099715A /* Common */,
 				8F2799DF20E3FC1E0099715A /* Controllers */,
 				8F2799DD20E3FBE50099715A /* Model */,
+				8FDE2BD820E4F0D7005E98BF /* ViewModels */,
+				8FDE2BBC20E4DE18005E98BF /* Networking */,
 				8F2799DE20E3FBED0099715A /* Resources */,
 				8F2799CB20E3FB950099715A /* AppDelegate.swift */,
 			);
@@ -105,6 +120,7 @@
 			children = (
 				8FDE2BCF20E4E6EE005E98BF /* Protocols */,
 				8FDE2BC720E4E124005E98BF /* Enums */,
+				8FDE2BDD20E5025E005E98BF /* BaseResponse.swift */,
 				8FDE2BBD20E4DE4F005E98BF /* Character.swift */,
 				8FDE2BC820E4E2F5005E98BF /* Location.swift */,
 				8FDE2BC520E4E119005E98BF /* LocationLink.swift */,
@@ -126,6 +142,8 @@
 		8F2799DF20E3FC1E0099715A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE2BD420E4EC0B005E98BF /* CharactersController.swift */,
+				8FDE2BE120E506B1005E98BF /* CharacterTableViewCell.swift */,
 				8F2799CF20E3FB950099715A /* Main.storyboard */,
 			);
 			path = Controllers;
@@ -134,6 +152,7 @@
 		8F2799E020E3FC250099715A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE2BE320E50718005E98BF /* StoryboardIdentifiable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -141,6 +160,8 @@
 		8FDE2BBC20E4DE18005E98BF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE2BD620E4ED5A005E98BF /* ApiRouter.swift */,
+				8FDE2BDF20E5046C005E98BF /* DataResponseError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -160,6 +181,14 @@
 				8FDE2BD020E4E729005E98BF /* URLable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8FDE2BD820E4F0D7005E98BF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE2BDB20E4F102005E98BF /* CharactersViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,14 +321,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FDE2BDC20E4F102005E98BF /* CharactersViewModel.swift in Sources */,
+				8FDE2BE220E506B1005E98BF /* CharacterTableViewCell.swift in Sources */,
 				8FDE2BC220E4E004005E98BF /* Gender.swift in Sources */,
 				8FDE2BC620E4E119005E98BF /* LocationLink.swift in Sources */,
+				8FDE2BDE20E5025E005E98BF /* BaseResponse.swift in Sources */,
 				8FDE2BCE20E4E53D005E98BF /* Episode.swift in Sources */,
 				8FDE2BC020E4DFF4005E98BF /* CharacterStatus.swift in Sources */,
 				8F2799CC20E3FB950099715A /* AppDelegate.swift in Sources */,
 				8FDE2BC920E4E2F5005E98BF /* Location.swift in Sources */,
 				8FDE2BBE20E4DE4F005E98BF /* Character.swift in Sources */,
+				8FDE2BE020E5046C005E98BF /* DataResponseError.swift in Sources */,
+				8FDE2BD720E4ED5A005E98BF /* ApiRouter.swift in Sources */,
+				8FDE2BD520E4EC0B005E98BF /* CharactersController.swift in Sources */,
 				8FDE2BD120E4E729005E98BF /* URLable.swift in Sources */,
+				8FDE2BE420E50718005E98BF /* StoryboardIdentifiable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,18 +29,62 @@
         <!--Item 1-->
         <scene sceneID="ork-Mr-0Ee">
             <objects>
-                <viewController id="okk-N6-Sz9" sceneMemberID="viewController">
+                <viewController id="okk-N6-Sz9" customClass="CharactersController" customModule="Rick_Morty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s4N-mN-I23">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzG-oo-oom">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CharacterTableViewCell" rowHeight="105" id="vP4-WL-dDE" customClass="CharacterTableViewCell" customModule="Rick_Morty" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vP4-WL-dDE" id="VLH-iN-sDk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK4-Ub-6Mg">
+                                                    <rect key="frame" x="15" y="42" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UK4-Ub-6Mg" firstAttribute="leading" secondItem="VLH-iN-sDk" secondAttribute="leading" constant="15" id="N5P-4Z-1WB"/>
+                                                <constraint firstItem="UK4-Ub-6Mg" firstAttribute="centerY" secondItem="VLH-iN-sDk" secondAttribute="centerY" id="gf1-19-FZh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="characterLabel" destination="UK4-Ub-6Mg" id="zVC-dk-DTN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="okk-N6-Sz9" id="K1C-Yf-9Cs"/>
+                                    <outlet property="delegate" destination="okk-N6-Sz9" id="8Ne-Dq-WiU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gzG-oo-oom" firstAttribute="leading" secondItem="bPE-Tp-27W" secondAttribute="leading" id="PRu-TG-8u1"/>
+                            <constraint firstItem="bPE-Tp-27W" firstAttribute="bottom" secondItem="gzG-oo-oom" secondAttribute="bottom" id="q1B-lV-ubq"/>
+                            <constraint firstItem="gzG-oo-oom" firstAttribute="top" secondItem="bPE-Tp-27W" secondAttribute="top" id="xnb-dp-gSL"/>
+                            <constraint firstItem="bPE-Tp-27W" firstAttribute="trailing" secondItem="gzG-oo-oom" secondAttribute="trailing" id="zca-ds-mOd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bPE-Tp-27W"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="KvV-vd-ASh"/>
+                    <connections>
+                        <outlet property="tableView" destination="gzG-oo-oom" id="MgF-Pb-4fe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1x0-C1-NIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="-249"/>
+            <point key="canvasLocation" x="740" y="-249.62518740629687"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="I2q-DO-ch5">
