@@ -8,5 +8,6 @@ target 'Rick&Morty' do
   # Pods for Rick&Morty
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'Dodo'
 
 end
