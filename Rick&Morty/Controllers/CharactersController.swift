@@ -29,7 +29,7 @@ private extension CharactersController {
 
 //MARK: - UITableViewDelegate
 extension CharactersController: UITableViewDelegate {
-    
+
 }
 
 //MARK: - UITableViewDataSource
@@ -52,7 +52,6 @@ extension CharactersController: CharactersViewModelDelegate {
     }
 
     func onFetchFailed(with reason: String) {
-        //Need to show some error state message with DODO or separate controller if there is no results at all
-        print("Need to check what is wrong - \(reason)")
+        Utils.showMessage(reason, view: view, anchor: view.topAnchor, dodoType: .error)
     }
 }

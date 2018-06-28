@@ -17,6 +17,8 @@ class CharactersViewModel {
     private weak var delegate: CharactersViewModelDelegate?
 
     private var characters: [Character] = []
+    private var totalCount = 0
+    private var nextPageUrlString = ""
 
     init(delegate: CharactersViewModelDelegate) {
         self.delegate = delegate
@@ -31,7 +33,24 @@ class CharactersViewModel {
     }
 
     func fetchCharacters() {
-        Alamofire.request(ApiRouter.characters)
+        if characters.isEmpty {
+            try? fetchCharacters(with: ApiRouter.characters.asURLRequest())
+        } else {
+            guard charactersCount != totalCount else {
+                return
+            }
+
+            guard let url = URL(string: nextPageUrlString) else {
+                delegate?.onFetchFailed(with: "Invalid next page URL")
+                return
+            }
+            let urlRequest = URLRequest(url: url)
+            fetchCharacters(with: urlRequest)
+        }
+    }
+
+    private func fetchCharacters(with urlRequest: URLRequest) {
+        Alamofire.request(urlRequest)
             .validate()
             .responseJSON(completionHandler: { response in
                 switch response.result {
@@ -47,9 +66,15 @@ class CharactersViewModel {
                         return
                     }
 
+                    self.updatePagingInfo(with: decodedResponse.info)
                     self.characters.append(contentsOf: decodedResponse.results)
                     self.delegate?.onFetchCompleted()
                 }
             })
+    }
+
+    private func updatePagingInfo(with info: PagingInfo) {
+        totalCount = info.generalCount
+        nextPageUrlString = info.nextUrlString
     }
 }

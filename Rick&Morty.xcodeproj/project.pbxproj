@@ -25,6 +25,8 @@
 		8FDE2BE020E5046C005E98BF /* DataResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BDF20E5046C005E98BF /* DataResponseError.swift */; };
 		8FDE2BE220E506B1005E98BF /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BE120E506B1005E98BF /* CharacterTableViewCell.swift */; };
 		8FDE2BE420E50718005E98BF /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BE320E50718005E98BF /* StoryboardIdentifiable.swift */; };
+		8FDE2BE620E509FE005E98BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BE520E509FE005E98BF /* Utils.swift */; };
+		8FDE2BE920E50D82005E98BF /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE2BE820E50D82005E98BF /* Optional+Extension.swift */; };
 		F2E962C2ED3C19B407B080C3 /* Pods_Rick_Morty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148812098D226CC594301C10 /* Pods_Rick_Morty.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		8FDE2BDF20E5046C005E98BF /* DataResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseError.swift; sourceTree = "<group>"; };
 		8FDE2BE120E506B1005E98BF /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		8FDE2BE320E50718005E98BF /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		8FDE2BE520E509FE005E98BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8FDE2BE820E50D82005E98BF /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		B4FBDEE086BED61772B42016 /* Pods-Rick&Morty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick&Morty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rick&Morty/Pods-Rick&Morty.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				8FDE2BE320E50718005E98BF /* StoryboardIdentifiable.swift */,
+				8FDE2BE520E509FE005E98BF /* Utils.swift */,
+				8FDE2BE720E50D6A005E98BF /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -189,6 +195,14 @@
 				8FDE2BDB20E4F102005E98BF /* CharactersViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8FDE2BE720E50D6A005E98BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE2BE820E50D82005E98BF /* Optional+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,11 +339,13 @@
 			files = (
 				8FDE2BDC20E4F102005E98BF /* CharactersViewModel.swift in Sources */,
 				8FDE2BE220E506B1005E98BF /* CharacterTableViewCell.swift in Sources */,
+				8FDE2BE920E50D82005E98BF /* Optional+Extension.swift in Sources */,
 				8FDE2BC220E4E004005E98BF /* Gender.swift in Sources */,
 				8FDE2BC620E4E119005E98BF /* LocationLink.swift in Sources */,
 				8FDE2BDE20E5025E005E98BF /* BaseResponse.swift in Sources */,
 				8FDE2BCE20E4E53D005E98BF /* Episode.swift in Sources */,
 				8FDE2BC020E4DFF4005E98BF /* CharacterStatus.swift in Sources */,
+				8FDE2BE620E509FE005E98BF /* Utils.swift in Sources */,
 				8F2799CC20E3FB950099715A /* AppDelegate.swift in Sources */,
 				8FDE2BC920E4E2F5005E98BF /* Location.swift in Sources */,
 				8FDE2BBE20E4DE4F005E98BF /* Character.swift in Sources */,
@@ -485,7 +501,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D926P89TC6;
 				INFOPLIST_FILE = "$(SRCROOT)/Rick&Morty/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "inoXoft.Rick-Morty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -501,7 +520,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D926P89TC6;
 				INFOPLIST_FILE = "$(SRCROOT)/Rick&Morty/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "inoXoft.Rick-Morty";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
