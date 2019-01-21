@@ -1,5 +1,5 @@
 //
-//  CharacterTableViewCell.swift
+//  CharactersCollectionViewCell.swift
 //  Rick&Morty
 //
 //  Created by Andriy Stefanchuk on 28.06.18.
@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
 
-class CharacterTableViewCell: UITableViewCell {
+class CharactersCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var characterLabel: UILabel!
+    @IBOutlet private weak var characterImageView: UIImageView!
 
     func configure(with character: Character) {
         characterLabel.text = character.name
+        if let imageUrl = character.imageUrl {
+            characterImageView.kf.setImage(with: imageUrl)
+        }
     }
 }

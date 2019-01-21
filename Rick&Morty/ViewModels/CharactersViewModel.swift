@@ -19,6 +19,7 @@ class CharactersViewModel {
     private var characters: [Character] = []
     private var totalCount = 0
     private var nextPageUrlString = ""
+    private var isFetchInProgress = false
 
     init(delegate: CharactersViewModelDelegate) {
         self.delegate = delegate
@@ -28,15 +29,23 @@ class CharactersViewModel {
         return characters.count
     }
 
+    var canLoadMore: Bool {
+        return !nextPageUrlString.isEmpty && !isFetchInProgress
+    }
+
     func character(at index: Int) -> Character {
         return characters[index]
     }
 
     func fetchCharacters() {
+        guard !isFetchInProgress else { return }
+        isFetchInProgress = true
+
         if characters.isEmpty {
             try? fetchCharacters(with: ApiRouter.characters.asURLRequest())
         } else {
             guard charactersCount != totalCount else {
+                isFetchInProgress = false
                 return
             }
 
@@ -53,6 +62,7 @@ class CharactersViewModel {
         Alamofire.request(urlRequest)
             .validate()
             .responseJSON(completionHandler: { response in
+                self.isFetchInProgress = false
                 switch response.result {
                 case .failure(let error):
                     self.delegate?.onFetchFailed(with: error.localizedDescription)

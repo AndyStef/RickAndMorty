@@ -41,5 +41,3 @@ struct `Character`: Decodable, URLable {
         case imageUrlString = "image"
     }
 }
-
-
